@@ -22,7 +22,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
   spec.platform      = Gem::Platform::RUBY
 
-  spec.required_ruby_version = ">= 1.8.7"
+  spec.required_ruby_version = ">= 1.9.3"
 
   spec.add_runtime_dependency "faraday", "~> 0.9.1"
 
@@ -34,7 +34,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "mocha", "~> 1.1.0"
   spec.add_development_dependency "minitest-profile", "~> 0.0.2"
   spec.add_development_dependency "minitest-reporters", "~> 1.0.19"
-  spec.add_development_dependency "guard", "~> 2.12.6"
+  spec.add_development_dependency "guard", "~> 2.13.0"
   spec.add_development_dependency "guard-minitest", "~> 2.4.4"
 
   spec.add_development_dependency "vcr", "~> 2.9.3"

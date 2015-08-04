@@ -11,7 +11,7 @@ module EasyGeoIP
         "http://geoip.nekudo.com/api/#{ip}"
       end
 
-      def self.standardize_response(json)
+      def self.standardize_geodata(json)
         {
           ip:            json["ip"],
           country:       json["country"]["name"],

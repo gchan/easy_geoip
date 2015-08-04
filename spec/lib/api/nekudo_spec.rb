@@ -18,10 +18,10 @@ describe EasyGeoIP::API::Nekudo do
     }
   end
 
-  it ".query returns a correct EasyGeoIP::Response" do
+  it ".query returns a correct EasyGeoIP::GeoData" do
     VCR.use_cassette("nekudo") do
       response = EasyGeoIP::API::Nekudo.query("8.8.8.8")
-      response.must_be_instance_of(EasyGeoIP::Response)
+      response.must_be_instance_of(EasyGeoIP::GeoData)
 
       expected_response.each do |attribute, value|
         response.send(attribute).must_equal value
@@ -32,7 +32,7 @@ describe EasyGeoIP::API::Nekudo do
   it ".query can make a real request" do
     live_request do
       response = EasyGeoIP::API::Nekudo.query("8.8.8.8")
-      response.must_be_instance_of(EasyGeoIP::Response)
+      response.must_be_instance_of(EasyGeoIP::GeoData)
       response.ip.must_equal "8.8.8.8"
     end
   end

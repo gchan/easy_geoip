@@ -1,7 +1,7 @@
 require "minitest_helper"
 
-describe EasyGeoIP::Response do
-  let(:response) { EasyGeoIP::Response.new(attributes) }
+describe EasyGeoIP::GeoData do
+  let(:response) { EasyGeoIP::GeoData.new(attributes) }
 
   let(:attributes) do
     {
@@ -22,20 +22,20 @@ describe EasyGeoIP::Response do
 
   describe ".new" do
     it "can be initialized without a parameter" do
-      EasyGeoIP::Response.new.must_be_instance_of EasyGeoIP::Response
+      EasyGeoIP::GeoData.new.must_be_instance_of EasyGeoIP::GeoData
     end
 
     it "can be initialized with attributes" do
-      response.must_be_instance_of EasyGeoIP::Response
+      response.must_be_instance_of EasyGeoIP::GeoData
     end
 
     it "can be initialized with incomplete attributes" do
-      EasyGeoIP::Response.new(ip: "8.8.8.8").
-        must_be_instance_of EasyGeoIP::Response
+      EasyGeoIP::GeoData.new(ip: "8.8.8.8").
+        must_be_instance_of EasyGeoIP::GeoData
     end
 
     it "ignores invalid attributes when initialized" do
-      EasyGeoIP::Response.new(foo: "bar").wont_respond_to :foo
+      EasyGeoIP::GeoData.new(foo: "bar").wont_respond_to :foo
     end
   end
 
@@ -47,11 +47,11 @@ describe EasyGeoIP::Response do
     end
 
     it "returns nil for missing attributes" do
-      EasyGeoIP::Response.new(ip: "8.8.8.8").city.must_be_nil
+      EasyGeoIP::GeoData.new(ip: "8.8.8.8").city.must_be_nil
     end
 
     it "stores partial attributes that are accessible" do
-      EasyGeoIP::Response.new(ip: "8.8.8.8").ip.must_equal "8.8.8.8"
+      EasyGeoIP::GeoData.new(ip: "8.8.8.8").ip.must_equal "8.8.8.8"
     end
   end
 
@@ -61,7 +61,7 @@ describe EasyGeoIP::Response do
   end
 
   it "#to_hash values are nil for missing attributes" do
-    hash = EasyGeoIP::Response.new(ip: "8.8.8.8").to_hash
+    hash = EasyGeoIP::GeoData.new(ip: "8.8.8.8").to_hash
 
     attributes.each do |attribute, _value|
       next if attribute == :ip
@@ -72,7 +72,7 @@ describe EasyGeoIP::Response do
   end
 
   it "#to_hash excludes invalid attributes from .new" do
-    hash = EasyGeoIP::Response.new(foo: "bar").to_hash
+    hash = EasyGeoIP::GeoData.new(foo: "bar").to_hash
 
     hash.keys.wont_include :foo
 

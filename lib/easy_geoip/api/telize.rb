@@ -11,7 +11,7 @@ module EasyGeoIP
         "https://www.telize.com/geoip/#{ip}"
       end
 
-      def self.standardize_response(json)
+      def self.standardize_geodata(json)
         {
           ip:             json["ip"],
           country:        json["country"],

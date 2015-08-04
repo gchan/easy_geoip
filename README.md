@@ -14,7 +14,7 @@ No database downloads, no registration, no API keys, ~~no~~ [minimal](https://gi
 ```ruby
 EasyGeoIP.query("8.8.8.8")
 
-=> #<EasyGeoIP::Response:0x007f91b9512960
+=> #<EasyGeoIP::GeoData:0x007f91b9512960
  @city="Mountain View",
  @continent_code="NA",
  @country="United States",
@@ -35,9 +35,10 @@ EasyGeoIP.query("2001:4860:4860::8888")
 See the 'Usage' section for more information.
 
 ## IP Geolocation Services
+
 EasyGeoIP currently supports the geolocation services listed below. All these services are free, open source, and require no registration or authentication.
 
-Regardless of which service is used, geolocation information is returned in the same format for ease of use. See the `EasyGeoIP::Response` section below for more information.
+Regardless of which service is used, geolocation information is returned in the same format for ease of use. See the `EasyGeoIP::GeoData` section below for more information.
 
 #### Telize (Default) `:telize`
 * **HTTPS**: Yes
@@ -113,13 +114,13 @@ end
 
 #### Querying IPs - One Method to Rule Them All
 
-Use the `query` method to retrieve geolocation information for a specified IPv4 or IPv6 address. An instance of `EasyGeoIP::Response` is returned.
+Use the `query` method to retrieve geolocation information for a specified IPv4 or IPv6 address. An instance of `EasyGeoIP::GeoData` is returned.
 
 ```ruby
 EasyGeoIP.query("8.8.8.8")
 
-# `EasyGeoIP::Response` object is returned
-=> #<EasyGeoIP::Response:0x007f91b9512960
+# `EasyGeoIP::GeoData` object is returned
+=> #<EasyGeoIP::GeoData:0x007f91b9512960
  @city="Mountain View",
  @continent_code="NA",
  @country="United States",
@@ -142,9 +143,9 @@ EasyGeoIP.query("")
 EasyGeoIP.query
 ```
 
-#### EasyGeoIP::Response
+#### EasyGeoIP::GeoData
 
-Regardless of which service you use, geolocation information is returned as a `EasyGeoIP::Response` object where its attributes are easily accessible. Calling `#to_hash` returns all information as a `Hash`.
+Regardless of which service you use, geolocation information is returned as a `EasyGeoIP::GeoData` object where its attributes are easily accessible. Calling `#to_hash` returns all information as a `Hash`.
 
 ```ruby
 geo_data = EasyGeoIP.query("8.8.8.8")

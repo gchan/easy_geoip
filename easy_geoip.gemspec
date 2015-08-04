@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Gordon Chan"]
   spec.email         = ["developer.gordon@gmail.com"]
 
-  spec.summary       = "A small, simple, and easy IP geolocation client."
+  spec.summary       = "A small, simple, and easy to use IP geolocation client."
   spec.description   = "A common Ruby interface for various free IP geolocation
     services. Small, simple and easy to use."
   spec.homepage      = "https://www.github.com/gchan/easy_geoip"

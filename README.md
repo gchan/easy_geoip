@@ -1,4 +1,4 @@
-# EasyGeoip
+# EasyGeoIP
 [![Gem Version](https://badge.fury.io/rb/easy_geoip.svg)](http://badge.fury.io/rb/easy_geoip) [![Dependency Status](https://gemnasium.com/gchan/easy_geoip.svg)](https://gemnasium.com/gchan/easy_geoip) ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
 [![Build Status](https://travis-ci.org/gchan/easy_geoip.svg?branch=master)](https://travis-ci.org/gchan/easy_geoip) [![Coverage Status](https://coveralls.io/repos/gchan/easy_geoip/badge.svg?branch=master)](https://coveralls.io/r/gchan/easy_geoip?branch=master) [![Code Climate](https://codeclimate.com/github/gchan/easy_geoip/badges/gpa.svg)](https://codeclimate.com/github/gchan/easy_geoip)
@@ -7,7 +7,7 @@ A common Ruby interface to retrieve IP-based [geolocation](https://en.wikipedia.
 
 No database downloads, no registration, no API keys, ~~no~~ [minimal](https://github.com/gchan/easy_geoip/blob/master/easy_geoip.gemspec#L27) dependencies. *Easy!*
 
-![Easy!](https://github.com/gchan/easy_geoip/blob/master/easy.gif)
+[![Easy!](https://github.com/gchan/easy_geoip/blob/master/easy.gif)](https://dwigif.appspot.com/)
 
 #### Quick Example
 
@@ -36,7 +36,7 @@ See the 'Usage' section for more information.
 
 ## IP Geolocation Services
 
-EasyGeoIP currently supports the geolocation services listed below. All these services are free, open source, and require no registration or authentication.
+EasyGeoIP currently supports the geolocation services listed below. All of these services are free, open source, and require no registration or authentication.
 
 Regardless of which service is used, geolocation information is returned in the same format for ease of use. See the `EasyGeoIP::GeoData` section below for more information.
 
@@ -65,9 +65,9 @@ All of the above services use data provided by [MaxMind](http://www.maxmind.com)
 
 ### Reliability
 
-The services listed above are free, require no registration, and supported by volunteer developers. It it generally understood that such services are traditionally more likely to experience downtime or disruption.
+The services listed above are free, require no registration, and are supported by volunteer developers. It is generally understood that such services are traditionally more likely to experience downtime or disruption.
 
-If IP geolocation is mission-critical in your application, consider using a paid service to mitigate the risk of downtime and disruption.
+If IP geolocation is mission-critical in your application, consider using a paid commercial service to mitigate the risk of downtime and disruption.
 
 ## Installation
 
@@ -114,7 +114,7 @@ end
 
 #### Querying IPs - One Method to Rule Them All
 
-Use the `query` method to retrieve geolocation information for a specified IPv4 or IPv6 address. An instance of `EasyGeoIP::GeoData` is returned.
+Use the `query` method to retrieve geolocation information for a specified IPv4 or IPv6 address. An instance of `EasyGeoIP::GeoData` is returned which contains the geolocation information.
 
 ```ruby
 EasyGeoIP.query("8.8.8.8")
@@ -135,7 +135,7 @@ EasyGeoIP.query("8.8.8.8")
  @time_zone="America/Los_Angeles">
 ```
 
-**Bonus** - Pass in `nil`, an empty string or no arguments and the default geolocation service, [Telize](https://www.telize.com) will return the geolocation information for your IP address!
+**Bonus** - Pass in `nil`, an empty string or no arguments to the `.query` method and the default geolocation service, [Telize](https://www.telize.com) will return the geolocation information for your IP address!
 
 ```ruby
 EasyGeoIP.query(nil)

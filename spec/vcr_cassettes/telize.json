@@ -1,0 +1,61 @@
+{
+  "http_interactions": [
+    {
+      "request": {
+        "method": "get",
+        "uri": "https://www.telize.com/geoip/8.8.8.8",
+        "body": {
+          "encoding": "US-ASCII",
+          "string": ""
+        },
+        "headers": {
+          "User-Agent": [
+            "Faraday v0.9.1"
+          ],
+          "Accept-Encoding": [
+            "gzip;q=1.0,deflate;q=0.6,identity;q=0.3"
+          ],
+          "Accept": [
+            "*/*"
+          ]
+        }
+      },
+      "response": {
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "headers": {
+          "Server": [
+            "nginx/1.6.2"
+          ],
+          "Date": [
+            "Tue, 04 Aug 2015 06:40:00 GMT"
+          ],
+          "Content-Type": [
+            "application/json; charset=utf-8"
+          ],
+          "Content-Length": [
+            "348"
+          ],
+          "Connection": [
+            "close"
+          ],
+          "Cache-Control": [
+            "no-cache"
+          ],
+          "Access-Control-Allow-Origin": [
+            "*"
+          ]
+        },
+        "body": {
+          "encoding": "UTF-8",
+          "string": "{\"longitude\":-122.0838,\"latitude\":37.386,\"asn\":\"AS15169\",\"offset\":\"-7\",\"ip\":\"8.8.8.8\",\"area_code\":\"0\",\"continent_code\":\"NA\",\"dma_code\":\"0\",\"city\":\"Mountain View\",\"timezone\":\"America\\/Los_Angeles\",\"region\":\"California\",\"country_code\":\"US\",\"isp\":\"Google Inc.\",\"postal_code\":\"94040\",\"country\":\"United States\",\"country_code3\":\"USA\",\"region_code\":\"CA\"}\n"
+        },
+        "http_version": null
+      },
+      "recorded_at": "Tue, 04 Aug 2015 06:40:02 GMT"
+    }
+  ],
+  "recorded_with": "VCR 2.9.3"
+}

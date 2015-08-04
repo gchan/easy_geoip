@@ -1,11 +1,13 @@
 require "simplecov"
 require "coveralls"
 require "codeclimate-test-reporter"
+require "codecov"
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
   SimpleCov::Formatter::HTMLFormatter,
   Coveralls::SimpleCov::Formatter,
-  CodeClimate::TestReporter::Formatter
+  CodeClimate::TestReporter::Formatter,
+  SimpleCov::Formatter::Codecov
 ]
 
 # No JRuby support for SimpleCov

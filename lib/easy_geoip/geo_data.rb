@@ -1,5 +1,5 @@
 module EasyGeoIP
-  class Response
+  class GeoData
     attr_reader :ip, :country, :country_code, :city, :region, :region_code,
                 :postal_code, :continent_code, :latitude, :longitude,
                 :time_zone, :isp

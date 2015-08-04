@@ -18,10 +18,10 @@ describe EasyGeoIP::API::Telize do
     }
   end
 
-  it ".query returns a correct EasyGeoIP::Response" do
+  it ".query returns a correct EasyGeoIP::GeoData" do
     VCR.use_cassette("telize") do
       response = EasyGeoIP::API::Telize.query("8.8.8.8")
-      response.must_be_instance_of(EasyGeoIP::Response)
+      response.must_be_instance_of(EasyGeoIP::GeoData)
 
       expected_response.each do |attribute, value|
         response.send(attribute).must_equal value
@@ -32,7 +32,7 @@ describe EasyGeoIP::API::Telize do
   it ".query can make a real request" do
     live_request do
       response = EasyGeoIP::API::Telize.query("8.8.8.8")
-      response.must_be_instance_of(EasyGeoIP::Response)
+      response.must_be_instance_of(EasyGeoIP::GeoData)
       response.ip.must_equal "8.8.8.8"
     end
   end

@@ -57,7 +57,7 @@ Regardless of which service is used, geolocation information is returned in the 
 #### Nekudo `:nekudo`
 * **HTTPS**: No
 * **Limits**: None, but fair use policy applies
-* **Open Source License**: BSD 3-clause
+* **Open Source License**: MIT
 * **GitHub Project**: https://www.github.com/nekudo/shiny_geoip
 * **Homepage**: http://geoip.nekudo.com
 

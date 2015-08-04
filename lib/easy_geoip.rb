@@ -13,7 +13,7 @@ module EasyGeoIP
     true
   end
 
-  def query(ip)
+  def query(ip = "")
     api.query(ip)
   end
 

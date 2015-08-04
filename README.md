@@ -1,8 +1,11 @@
 # EasyGeoip
+[![Gem Version](https://badge.fury.io/rb/easy_geoip.svg)](http://badge.fury.io/rb/easy_geoip) [![Dependency Status](https://gemnasium.com/gchan/easy_geoip.svg)](https://gemnasium.com/gchan/easy_geoip) ![License](https://img.shields.io/badge/license-MIT-blue.svg)
+
+[![Build Status](https://travis-ci.org/gchan/easy_geoip.svg?branch=master)](https://travis-ci.org/gchan/easy_geoip) [![Coverage Status](https://coveralls.io/repos/gchan/easy_geoip/badge.svg?branch=master)](https://coveralls.io/r/gchan/easy_geoip?branch=master) [![Code Climate](https://codeclimate.com/github/gchan/easy_geoip/badges/gpa.svg)](https://codeclimate.com/github/gchan/easy_geoip)
 
 A common Ruby interface to retrieve IP-based [geolocation](https://en.wikipedia.org/wiki/Geolocation) information from various free and open source IP geolocation services.
 
-No database downloads, no registration, no API keys, ~~no~~ minimal dependencies. *Easy!*
+No database downloads, no registration, no API keys, ~~no~~ [minimal](https://github.com/gchan/easy_geoip/blob/master/easy_geoip.gemspec#L27) dependencies. *Easy!*
 
 ![Easy!](https://github.com/gchan/easy_geoip/blob/master/easy.gif)
 

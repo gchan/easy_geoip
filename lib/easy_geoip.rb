@@ -24,7 +24,7 @@ module EasyGeoIP
   private
 
   def api
-    const_get("API::#{api_service.capitalize}")
+    EasyGeoIP::API.const_get("#{api_service.capitalize}")
   end
 
   def apply_configuration(settings)

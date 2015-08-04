@@ -1,7 +1,7 @@
 require "minitest_helper"
 
 describe EasyGeoIP::Client do
-  let(:url)      { "https://www.quandl.com/api/v3/datasets/GOOG/NASDAQ_GOOG.json?rows=1" }
+  let(:url)      { "http://jsonip.com" }
   let(:response) { stub(body: "{\"a\": \"b\"}") }
 
   describe ".get" do

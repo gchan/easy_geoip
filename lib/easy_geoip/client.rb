@@ -20,7 +20,7 @@ module EasyGeoIP
     def self.connection
       @connection ||= Faraday::Connection.new do |connection|
         connection.adapter Faraday.default_adapter
-        connection.use     Faraday::Response::RaiseError
+        connection.use Faraday::Response::RaiseError
       end
     end
 

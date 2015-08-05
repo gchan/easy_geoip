@@ -1,21 +1,20 @@
 # EasyGeoIP
-[![Gem Version](https://badge.fury.io/rb/easy_geoip.svg)](http://badge.fury.io/rb/easy_geoip) [![Dependency Status](https://gemnasium.com/gchan/easy_geoip.svg)](https://gemnasium.com/gchan/easy_geoip) ![License](https://img.shields.io/badge/license-MIT-blue.svg)
+[![Gem Version][version-badge]][rubygems] [![Dependency Status][dependency-badge]][gemnasium] ![License][license-badge]
 
+[![Build Status][travis-badge]][travis] [![Coverage Status][coveralls-badge]][coveralls] [![Code Climate][code-climate-badge]][code-climate]
 
-[![Build Status](https://travis-ci.org/gchan/easy_geoip.svg?branch=master)](https://travis-ci.org/gchan/easy_geoip) [![Coverage Status](https://coveralls.io/repos/gchan/easy_geoip/badge.svg?branch=master&service=github)](https://coveralls.io/github/gchan/easy_geoip?branch=master) [![Code Climate](https://codeclimate.com/github/gchan/easy_geoip/badges/gpa.svg)](https://codeclimate.com/github/gchan/easy_geoip)
+A common Ruby interface to retrieve IP-based [geolocation][geolocation-wiki] information from various free and open source IP geolocation services.
 
-A common Ruby interface to retrieve IP-based [geolocation](https://en.wikipedia.org/wiki/Geolocation) information from various free and open source IP geolocation services.
+No database downloads, no registration, no API keys, ~~no~~ [minimal][gemspec] dependencies. *Easy!*
 
-No database downloads, no registration, no API keys, ~~no~~ [minimal](https://github.com/gchan/easy_geoip/blob/master/easy_geoip.gemspec#L27) dependencies. *Easy!*
+[![Easy!][easy-gif]][gif-credit]
 
-[![Easy!](https://github.com/gchan/easy_geoip/blob/master/easy.gif)](https://dwigif.appspot.com/)
-
-#### Quick Example
+## Quick Example
 
 ```ruby
 EasyGeoIP.query("8.8.8.8")
 
-=> #<EasyGeoIP::GeoData:0x007f91b9512960
+# => #<EasyGeoIP::GeoData:0x007f91b9512960
  @city="Mountain View",
  @continent_code="NA",
  @country="United States",
@@ -29,7 +28,6 @@ EasyGeoIP.query("8.8.8.8")
  @region_code="CA",
  @time_zone="America/Los_Angeles">
 
-# IPv6 is also supported
 EasyGeoIP.query("2001:4860:4860::8888")
 ```
 
@@ -62,7 +60,7 @@ Regardless of which service is used, geolocation information is returned in the 
 * **GitHub Project**: https://www.github.com/nekudo/shiny_geoip
 * **Homepage**: http://geoip.nekudo.com
 
-All of the above services use data provided by [MaxMind](http://www.maxmind.com).
+All of the above services use data provided by [MaxMind][maxmind].
 
 ### Reliability
 
@@ -75,31 +73,34 @@ If IP geolocation is mission-critical in your application, consider using a paid
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'easy_geoip'
+gem "easy_geoip"
 ```
 
 And then execute:
 
-    $ bundle
+```bash
+$ bundle
+```
 
 Or install it yourself as:
 
-    $ gem install easy_geoip
-
+```bash
+$ gem install easy_geoip
+```
 
 #### Supported Ruby versions
-EasyGeoIP supports MRI Ruby 1.9+ and the JRuby and Rubinius equivalent. The specific Ruby versions we build and test on can be found at [TravisCI](https://travis-ci.org/gchan/easy_geoip).
+EasyGeoIP supports MRI Ruby 1.9+ and the JRuby and Rubinius equivalent. The specific Ruby versions we build and test on can be found at [TravisCI][travis].
 
 ## Usage
 
 #### Configuration
 
-EasyGeoIP supports a few free IP geolocation services; the default is [Telize](https://www.telize.com) but EasyGeoIP can easily be configured to use another service.
+EasyGeoIP supports a few free IP geolocation services; the default is [Telize][telize] but EasyGeoIP can easily be configured to use another service.
 
 ```ruby
 # The default geolocation service is Telize
 EasyGeoIP.api_service
-=> :telize
+# => :telize
 
 # Variable assignment
 EasyGeoIP.api_service = :nekudo
@@ -120,8 +121,7 @@ Use the `query` method to retrieve geolocation information for a specified IPv4 
 ```ruby
 EasyGeoIP.query("8.8.8.8")
 
-# `EasyGeoIP::GeoData` object is returned
-=> #<EasyGeoIP::GeoData:0x007f91b9512960
+# => #<EasyGeoIP::GeoData:0x007f91b9512960
  @city="Mountain View",
  @continent_code="NA",
  @country="United States",
@@ -134,9 +134,12 @@ EasyGeoIP.query("8.8.8.8")
  @region="California",
  @region_code="CA",
  @time_zone="America/Los_Angeles">
+
+# IPv6 is also supported
+EasyGeoIP.query("2001:4860:4860::8888")
 ```
 
-**Bonus** - Pass in `nil`, an empty string or no arguments to the `.query` method and the default geolocation service, [Telize](https://www.telize.com) will return the geolocation information for your IP address!
+**Bonus** - Pass in `nil`, an empty string, or no arguments to the `.query` method and the default geolocation service, [Telize][telize] will return the geolocation information for your IP address!
 
 ```ruby
 EasyGeoIP.query(nil)
@@ -167,7 +170,7 @@ geo_data.time_zone      # => "America/Los_Angeles"
 # Return a Hash of all attributes
 geo_data.to_hash
 
-=> {:ip=>"8.8.8.8",
+{:ip=>"8.8.8.8",
  :country=>"United States",
  :country_code=>"US",
  :city=>"Mountain View",
@@ -195,8 +198,30 @@ All of the above error classes inherit `EasyGeoIP::Error::ClientError`, `EasyGeo
 
 ## Contributing & Development
 
-Please view [CONTRIBUTING.md](https://github.com/gchan/easy_geoip/blob/master/CONTRIBUTING.md) for contributing and development information.
+Please view [CONTRIBUTING.md][contributing] for contributing and development information.
 
 ## License
 
 EasyGeoIP is Copyright (c) 2015 Gordon Chan and is released under the MIT License. It is free software, and may be redistributed under the terms specified in the LICENSE file.
+
+[version-badge]: https://badge.fury.io/rb/easy_geoip.svg
+[rubygems]: https://rubygems.org/gems/easy_geoip
+[dependency-badge]: https://gemnasium.com/gchan/easy_geoip.svg
+[gemnasium]: https://gemnasium.com/gchan/easy_geoip
+[license-badge]: https://img.shields.io/badge/license-MIT-blue.svg
+[travis-badge]: https://travis-ci.org/gchan/easy_geoip.svg?branch=master
+[travis]: https://travis-ci.org/gchan/easy_geoip
+[coveralls-badge]: https://coveralls.io/repos/gchan/easy_geoip/badge.svg?branch=master&service=github
+[coveralls]: https://coveralls.io/github/gchan/easy_geoip?branch=master
+[code-climate-badge]: https://codeclimate.com/github/gchan/easy_geoip/badges/gpa.svg
+[code-climate]: https://codeclimate.com/github/gchan/easy_geoip
+
+[easy-gif]: https://raw.githubusercontent.com/gchan/easy_geoip/master/easy.gif
+[gif-credit]: https://dwigif.appspot.com/
+
+[maxmind]: http://www.maxmind.com
+[telize]: https://www.telize.com
+[geolocation-wiki]: https://en.wikipedia.org/wiki/Geolocation
+
+[gemspec]: https://github.com/gchan/easy_geoip/blob/master/easy_geoip.gemspec#L27
+[contributing]: https://github.com/gchan/easy_geoip/blob/master/CONTRIBUTING.md

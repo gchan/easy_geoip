@@ -1,4 +1,4 @@
-require "easy_geoip/api/query"
+require "easy_geoip/query"
 
 module EasyGeoIP
   module API

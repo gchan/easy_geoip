@@ -225,3 +225,5 @@ EasyGeoIP is Copyright (c) 2015 Gordon Chan and is released under the MIT Licens
 
 [gemspec]: https://github.com/gchan/easy_geoip/blob/master/easy_geoip.gemspec#L27
 [contributing]: https://github.com/gchan/easy_geoip/blob/master/CONTRIBUTING.md
+
+[![Analytics](https://ga-beacon.appspot.com/UA-70790190-2/easy_geoip/README.md?flat)](https://github.com/igrigorik/ga-beacon)

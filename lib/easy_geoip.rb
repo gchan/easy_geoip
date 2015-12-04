@@ -18,7 +18,7 @@ module EasyGeoIP
   end
 
   def api_service
-    @api_service || :telize
+    @api_service || :freegeoip
   end
 
   private

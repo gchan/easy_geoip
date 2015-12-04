@@ -39,14 +39,7 @@ EasyGeoIP currently supports the geolocation services listed below. All of these
 
 Regardless of which service is used, geolocation information is returned in the same format for ease of use. See the `EasyGeoIP::GeoData` section below for more information.
 
-#### Telize (Default) `:telize`
-* **HTTPS**: Yes
-* **Limits**: None
-* **Open Source License**: MIT
-* **GitHub Project**: https://www.github.com/fcambus/telize
-* **Homepage**: https://www.telize.com
-
-#### Freegeoip `:freegeoip`
+#### Freegeoip (Default) `:freegeoip`
 * **HTTPS**: Yes
 * **Limits**: 10,000 queries per hour
 * **Open Source License**: BSD 3-clause
@@ -59,6 +52,15 @@ Regardless of which service is used, geolocation information is returned in the 
 * **Open Source License**: MIT
 * **GitHub Project**: https://www.github.com/nekudo/shiny_geoip
 * **Homepage**: http://geoip.nekudo.com
+
+#### Telize `:telize`
+* **HTTPS**: Yes
+* **Limits**: None
+* **Open Source License**: MIT
+* **GitHub Project**: https://www.github.com/fcambus/telize
+* **Homepage**: http://www.telize.com
+
+**Note:** [Telize's][telize] public API has been discontinued.
 
 All of the above services use data provided by [MaxMind][maxmind].
 
@@ -95,12 +97,12 @@ EasyGeoIP supports MRI Ruby 1.9+ and the JRuby and Rubinius equivalent. The spec
 
 #### Configuration
 
-EasyGeoIP supports a few free IP geolocation services; the default is [Telize][telize] but EasyGeoIP can easily be configured to use another service.
+EasyGeoIP supports a few free IP geolocation services; the default is [Freegeoip][freegeoip] but EasyGeoIP can easily be configured to use another service.
 
 ```ruby
-# The default geolocation service is Telize
+# The default geolocation service is Freegeoip
 EasyGeoIP.api_service
-# => :telize
+# => :freegeoip
 
 # Variable assignment
 EasyGeoIP.api_service = :nekudo
@@ -110,7 +112,7 @@ EasyGeoIP.configure(api_service: :freegeoip)
 
 # Calling `.configure` with a block
 EasyGeoIP.configure do |config|
-  config.api_service = :telize
+  config.api_service = :freegeoip
 end
 ```
 
@@ -139,7 +141,7 @@ EasyGeoIP.query("8.8.8.8")
 EasyGeoIP.query("2001:4860:4860::8888")
 ```
 
-**Bonus** - Pass in `nil`, an empty string, or no arguments to the `.query` method and the default geolocation service, [Telize][telize] will return the geolocation information for your IP address!
+**Bonus** - Pass in `nil`, an empty string, or no arguments to the `.query` method and the default geolocation service, [Freegeoip][freegeoip] will return the geolocation information for your IP address!
 
 ```ruby
 EasyGeoIP.query(nil)
@@ -220,7 +222,8 @@ EasyGeoIP is Copyright (c) 2015 Gordon Chan and is released under the MIT Licens
 [gif-credit]: https://dwigif.appspot.com/
 
 [maxmind]: http://www.maxmind.com
-[telize]: https://www.telize.com
+[telize]: http://www.telize.com
+[freegeoip]: https://www.freegeoip.net
 [geolocation-wiki]: https://en.wikipedia.org/wiki/Geolocation
 
 [gemspec]: https://github.com/gchan/easy_geoip/blob/master/easy_geoip.gemspec#L27

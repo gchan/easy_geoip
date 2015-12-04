@@ -11,8 +11,8 @@ describe EasyGeoIP do
     EasyGeoIP::VERSION.wont_be_nil
   end
 
-  it ".api_serivce defaults to :telize" do
-    EasyGeoIP.api_service.must_equal :telize
+  it ".api_serivce defaults to :freegeoip" do
+    EasyGeoIP.api_service.must_equal :freegeoip
   end
 
   it ".api_serivce= sets @api_service to provided parameter" do
@@ -41,7 +41,7 @@ describe EasyGeoIP do
     end
 
     it "uses the default API when @api_service is nil" do
-      EasyGeoIP::API::Telize.expects(:query).with(ip)
+      EasyGeoIP::API::Freegeoip.expects(:query).with(ip)
 
       EasyGeoIP.query(ip)
     end

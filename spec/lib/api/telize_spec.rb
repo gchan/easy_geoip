@@ -30,6 +30,8 @@ describe EasyGeoIP::API::Telize do
   end
 
   it ".query can make a real request" do
+    skip 'Telize public API has been shut down'
+
     live_request do
       response = EasyGeoIP::API::Telize.query("8.8.8.8")
       response.must_be_instance_of(EasyGeoIP::GeoData)

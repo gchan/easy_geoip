@@ -1,7 +1,9 @@
 # EasyGeoIP
-[![Gem Version][version-badge]][rubygems] [![Dependency Status][dependency-badge]][gemnasium] ![License][license-badge]
+![Maintenance][maintenance-badge] [![Gem Version][version-badge]][rubygems] [![Dependency Status][dependency-badge]][gemnasium] ![License][license-badge]
 
 [![Build Status][travis-badge]][travis] [![Coverage Status][coveralls-badge]][coveralls] [![Code Climate][code-climate-badge]][code-climate]
+
+**Note: No longer actively maintained!**
 
 A common Ruby interface to retrieve IP-based [geolocation][geolocation-wiki] information from various free and open source IP geolocation services.
 
@@ -217,6 +219,7 @@ EasyGeoIP is Copyright (c) 2015 Gordon Chan and is released under the MIT Licens
 [coveralls]: https://coveralls.io/github/gchan/easy_geoip?branch=master
 [code-climate-badge]: https://codeclimate.com/github/gchan/easy_geoip/badges/gpa.svg
 [code-climate]: https://codeclimate.com/github/gchan/easy_geoip
+[maintenance-badge]: https://img.shields.io/maintenance/no/2015.svg
 
 [easy-gif]: https://raw.githubusercontent.com/gchan/easy_geoip/master/easy.gif
 [gif-credit]: https://dwigif.appspot.com/
